@@ -1,0 +1,26 @@
+<form action="/register" method="post" class="login">
+    <div layout="column">
+        <div flex>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Username</label>
+            <input ng-model="register.username">
+          </md-input-container>
+        </div>
+        <div flex>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Password</label>
+            <input type="password" ng-model="register.password">
+          </md-input-container>
+        </div>
+        <div flex>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Repeat password</label>
+            <input type="password" ng-model="register.repeat_password">
+          </md-input-container>
+        </div>
+    </div>
+    <div>
+        <md-button class="md-raised md-primary" ng-click="registerIn(register)">Register</md-button>
+    </div>
+    <div>{{error}}</div>
+</form>

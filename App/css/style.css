@@ -1,0 +1,105 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #D1FBC7;
+}
+
+md-whiteframe {
+	background: #fff;
+  margin: 20px;
+	min-height: 150px;
+  overflow: hidden;
+}
+
+.doc-style{
+  	width: 100%;
+  	height: 100%;
+	  overflow: hidden;
+  	display: inline-block;
+}
+
+.doc-style .content {
+	font-size: 17px;
+  	float: left;
+  	width: 100%;
+}
+.doc-style .content>div{
+  	margin-bottom: 5px;
+}
+.doc-style .content .name{
+	font-size: 24px;
+}
+
+.doc-style .buttons {
+	float: right;
+}
+
+.docs {
+	width: 100%;
+	min-height: 100px;
+	float: right;
+}
+
+/* USER */
+.user {
+
+}
+
+.user .user-image {
+	width: 70px;
+	height: 70px;
+}
+
+/* Rating */
+
+.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.rating .filled {
+    color: red;
+}
+
+.login {
+  margin-top: 100px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.my-toolbar {
+  background: url('http://www.edlc.co.uk/images/library%20shelves_v_library%20shelves%20placeheader%20(730%20x%20245).jpg');
+}
+
+.name {
+  background: #222222;
+  display: block;
+  padding: 10px;
+  width: 100%;
+  color: #D1FBC7;
+}
+
+.con {
+  padding: 20px;
+}
+
+.fleft {
+  float: right;
+}
+
+.add-doc {
+  margin-top: 10px;
+  margin-left: 300px;
+  margin-right: 300px;
+}

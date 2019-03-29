@@ -1,0 +1,42 @@
+<md-content>
+  <div class="user" layout="column">
+    <div flex>
+      <img class="user-image" src="http://www.adtechnology.co.uk/images/UGM-default-user.png" alt="">
+    </div>
+    <div flex>
+      <strong>Username: </strong> {{currentUser.username}}
+    </div>
+    <div flex>
+      <strong>Date of Membership: </strong> {{currentUser.date_of_membership | date:'medium'}}
+    </div>
+    <div flex>
+      <md-toolbar class="md-table-toolbar md-default">
+  <div class="md-toolbar-tools">
+    <span>Downloads</span>
+  </div>
+</md-toolbar>
+
+
+<md-table-container>
+  <table md-table ng-model="selected" md-progress="promise">
+    <thead md-head md-order="query.order" md-on-reorder="onReorder">
+      <tr md-row>
+        <th md-column md-order-by="nameToLower"><span>ID</span></th>
+        <th md-column md-numeric><span>Document</span></th>
+        <th md-column md-numeric>Date</th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row ng-repeat="transaction in transactions">
+        <td md-cell>{{transaction.doc_id}}</td>
+        <td md-cell>{{transaction.Title}}</td>
+        <td md-cell>{{transaction.date | date:'medium'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+
+<md-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{desserts.count}}" md-on-paginate="onPaginate" md-page-select></md-table-pagination>
+    </div>
+  </div>
+  </md-content>

@@ -1,0 +1,32 @@
+<md-input-container>
+    <label>Search</label>
+    <input ng-model="search">
+</md-input-container>
+
+<div layout="row" layout-wrap>
+    <div flex="33" ng-repeat="docs in documents | filter: search">
+        <md-whiteframe class="md-whiteframe-z3" layout="row">
+        <div flex>
+
+            <div class="content" layout="column">
+                <div class="name"><strong>Title:</strong> {{ ::docs.Title | limitTo: 50 }}</div>
+                <div class="con">
+                    <div><strong>Author:</strong> {{ ::docs.Author | limitTo: 50 }}</div>
+                    <div><strong>Language:</strong> {{ ::docs.Language_name }}</div>
+                    <div><strong>Genre:</strong> {{ ::docs.Genre_name | limitTo: 50 }}</div>
+                    <!--<div ng-show="user.admin"><a ng-click="deleteDoc(docs.Doc_id)" href="#">Delete</a> | <a href="#/editDoc/{{docs.Doc_id}}">Edit</a></div>-->
+                </div>
+            </div>
+            <div flex></div>
+            <div flex class="buttons">
+                <md-button class="md-warn" href="" ng-show="user.admin" ng-click="deleteDoc(docs.Doc_id)">Delete</md-button>
+                <md-button class="md-primary" ui-sref="editDoc({id:docs.Doc_id})" ng-show="user.admin">Edit</md-button>
+                <md-button class="md-raised md-primary fleft" ui-sref="details({id:docs.Doc_id})">Description</md-button>
+            </div>
+        </div>
+    </md-whiteframe>
+</div>
+
+</div>
+
+<pre>{{ docs | json }}</pre>

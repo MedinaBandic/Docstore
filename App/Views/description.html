@@ -1,0 +1,40 @@
+<div layout="row">
+    <div flex>
+        <md-whiteframe class="md-whiteframe-z3" layout="row">
+        <div flex>
+
+            <div class="content" layout="column">
+                <div class="name"><h1>{{ ::oneDoc.Title | limitTo: 50 }}</h1></div>
+                <div class="con">
+                    <div><strong>Author:</strong> {{ ::oneDoc.Author | limitTo: 50 }}</div>
+                    <div><strong>Language:</strong> {{ ::oneDoc.Language_name }}</div>
+                    <div><strong>Genre:</strong> {{ ::oneDoc.Genre_name | limitTo: 50 }}</div>
+                    <div><strong>Edition:</strong> {{ ::oneDoc.Edition | limitTo: 50 }}</div>
+
+                    <div><strong>Description:</strong> {{ ::oneDoc.Description | limitTo: 1500}}</div>
+                    <div><strong>Rating:</strong>
+                        <div>
+                            <span ng-repeat="rating in ratings">
+                                <div star-rating rating-value="rating.current" max="rating.max" on-rating-selected="getSelectedRating(rating)"></div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div flex></div>
+            <div flex class="buttons" ng-show="user">
+                <a href="/PDFs/{{oneDoc.Full_Version}}.pdf" download><md-button class="md-raised md-primary" ng-click="showTabDialog($event); postTransaction()">Download Full</md-button></a>
+                <a href="/PDFs/{{oneDoc.Short_Version}}.pdf" download><md-button class="md-raised md-primary" ng-click="showTabDialog($event); postTransaction()">Download Short</md-button></a>
+            </div>
+            
+            <md-list>
+                <md-list-item class="md-1-line" ng-repeat="comment in feedback">
+                    <img ng-src="http://gurucul.com/wp-content/uploads/2015/01/default-user-icon-profile.png" class="md-avatar" alt="" />
+                    <div class="md-list-item-text" layout="column">
+                      <p>{{ comment.comment }}</p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </div>
+    </md-whiteframe>
+</div>

@@ -1,0 +1,54 @@
+<div layout="column" class="add-doc">
+  <div flex>
+    <md-input-container class="md-block" flex-gt-xs>
+      <label>Title</label>
+      <input type="text" ng-model="addDoc.title">
+    </md-input-container>
+    <md-input-container class="md-block" flex-gt-xs>
+      <label>Author</label>
+      <input type="text" ng-model="addDoc.author">
+    </md-input-container>
+  </div>
+  <div flex>
+    <md-input-container class="md-block" flex-gt-xs>
+      <label>Language</label>
+      <md-select ng-model="addDoc.language_id">
+        <md-option ng-repeat="language in languages" value="{{language.Language_id}}">
+          {{language.Language_name}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container class="md-block" flex-gt-xs>
+      <label>Edition</label>
+      <input type="number" ng-model="addDoc.edition">
+    </md-input-container>
+  </div>
+  <div flex>
+    <md-input-container class="md-block" flex-gt-xsm>
+      <label>Genre</label>
+      <md-select ng-model="addDoc.genre_id">
+        <md-option ng-repeat="genre in genres" value="{{genre.Genre_id}}">
+          {{genre.Genre_name}}
+        </md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container class="md-block" flex-gt-xs>
+      <label>Short Version</label>
+      <input type="text" ng-model="addDoc.short_version">
+    </md-input-container>
+  </div>
+  <div flex>
+    <md-input-container class="md-block" flex-gt-xs>
+      <label>Full Version</label>
+      <input type="text" ng-model="addDoc.full_version">
+    </md-input-container>
+    <md-input-container class="md-block" flex-gt-xs>
+      <label>Description</label>
+      <input type="text" ng-model="addDoc.description">
+    </md-input-container>
+  </div>
+  <div flex>
+    <md-button class="md-raised md-primary" ng-click="adding(addDoc)">{{submitText}}</md-button>
+    <div>{{error}}</div>
+  </div>
+</div>

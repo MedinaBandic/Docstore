@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<title>Docstore</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link href="bower_components/angular-material-data-table/dist/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body ng-app="Docstore">
+
+	<md-toolbar class="md-tall my-toolbar">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ui-sref="home">
+          <i class="fa fa-home fa-2x"></i>
+        </md-button>
+        <h2>
+          <span>Online Docstore</span>
+        </h2>
+        <span flex></span>
+        <div ng-show="user.admin">
+        	<a href="#/addDoc">Add document</a> |&nbsp;
+        </div>
+        <a href="#/register" ng-show="!user">Register |</a>
+        <a href="#/login" ng-show="!user"> Login</a>
+        <a href="#/logout" ng-show="user"> Logout</a>
+        <md-button ng-show="user" class="md-icon-button" aria-label="More" ui-sref="user">
+          <i class="fa fa-user fa-2x"></i>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+	<div ui-view></div>
+ 
+	<script type="text/javascript" src ="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src ="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src ="bower_components/angular-aria/angular-aria.js"></script>
+	<script type="text/javascript" src ="bower_components/angular-animate/angular-animate.js"></script>
+	<script type="text/javascript" src ="bower_components/angular-material/angular-material.js"></script>
+	<script type="text/javascript" src="bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+
+<!--	<script type="text/javascript" src ="bower_components/ionic-rating/ionic-rating.min.js"></script>
+-->
+
+	<script type="text/javascript" src ="bower_components/bootstrap/src/rating/rating.js"></script>
+	<script type="text/javascript" src ="js/app.js"></script>
+
+  <script type="text/javascript" src ="js/directives/ratingDirective.js"></script>
+
+</body>
+</html>

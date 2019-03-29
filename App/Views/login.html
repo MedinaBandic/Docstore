@@ -1,0 +1,21 @@
+<form action="/login" method="post" class="login">
+    <div layout="column">
+        <div flex>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Username</label>
+            <input ng-model="login.username">
+          </md-input-container>
+        </div>
+        <div flex>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Password</label>
+            <input type="password" ng-model="login.password">
+          </md-input-container>
+        </div>
+    </div>
+    <div>
+        <md-button class="md-raised md-primary" ng-click="logingIn(login)">Login</md-button>
+    </div>
+    <div>{{error}}</div>
+</form>
+
